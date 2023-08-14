@@ -1,7 +1,7 @@
 import css from './filterContact.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filter/filter-slice';
-import { getFilter } from 'redux/filter/filter-selectors';
+import { selectFilter } from 'redux/filter/filter-selectors';
 
 const FilterContact = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const FilterContact = () => {
   const updateFilter = e => {
     onSetFilter(e.target.value);
   };
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
 
   return (
     <div>
